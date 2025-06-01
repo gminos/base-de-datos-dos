@@ -44,7 +44,7 @@ else
   exit 1
 fi
 
-BACKUP_FILE="respaldo_gimnaso.backup"
+BACKUP_FILE="respaldo_gimnasio.sql"
 
 if [[ ! -f "$BACKUP_FILE" ]]; then
   print_error "Archivo de respaldo '$BACKUP_FILE' no encontrado."
@@ -54,7 +54,7 @@ fi
 print_info "Se procederá a restaurar la base de datos desde '$BACKUP_FILE'."
 print_info "Es posible que se le solicite la contraseña de PostgreSQL para el usuario '$PG_USER'."
 
-if pg_restore -U "$PG_USER" -d "$DB_NAME" "$BACKUP_FILE" 2>/dev/null; then
+if psql -U "$PG_USER" -d "$DB_NAME" -f "$BACKUP_FILE" 2>/dev/null; then
   print_success "Restauración completada con éxito."
 else
   print_error "Error durante la restauración de la base de datos."
