@@ -23,3 +23,7 @@ mongorestore --db <nombre_destino> <ruta_al_respaldo>/<nombre_origen>
 ```bash
 mongorestore --db ayudas_mongo ayudas.bson
 ```
+---
+## Ejemplos de uso
+![image](https://github.com/user-attachments/assets/c39bc6a0-c3c7-4323-abab-e572d7c44f6d)
+
